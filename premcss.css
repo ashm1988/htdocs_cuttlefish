@@ -34,7 +34,7 @@ td:nth-child(6n+1){
 
 .center {
 	text-align:center;
-	align:center;
+	/* align:center; */
 }
 
 .row-buffer {
