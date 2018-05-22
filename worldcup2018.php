@@ -25,9 +25,10 @@
   </head>
 
   <body>
-    <pre>
+
     <?php
     $countrys = array(
+      " ",
       "Russia",
       "Brazil",
       "Iran",
@@ -63,8 +64,8 @@
     );
     sort($countrys);
 
-    function country_options($countrys){
-      echo '<select class="form-control" name="country_select" form="country_select">';
+    function country_options($countrys, $name){
+      echo '<select class="form-control" name="'.$name.'" form="country_select">';
       foreach($countrys as $country){
         echo '<option value="'.$country.'">'.$country.'</option>';
       };
@@ -74,9 +75,9 @@
 
 
     $goals = array(
-      "<tr><th>Goals</th></td>",
-      "<tr><td>The name of the first goalscorer</td><td>".country_options($countrys)."</td></tr>",
-      "<tr><td>The name of the top goalscorer</td></tr>",
+      "<tr><th colspan='2'>Goals</th></tr>",
+      '<tr><td>The name of the first goalscorer</td><td></td></tr>',
+      "<tr><td>The name of the top goalscorer</td><td>test</td></tr>",
       "<tr><td>Team that concedes the fewest goals</td></tr>",
       "<tr><td>Team that concedes the most goals</td></tr>",
       "<tr><td>The country who scores the most goals during the tournament (excluding penalty shoot-outs)</td></tr>",
@@ -86,22 +87,22 @@
       "<tr><td>The country that scores the first hat-trick</td></tr>",
       "<tr><td>The total number of own goals scored in the tournament</td></tr>",
       "<tr><td>The total number of hat-tricks in the tournament</td></tr>",
-      "<tr><th>Final Standings</th></td>",
+      "<tr><th colspan='2'>Final Standings</th></td>",
       "<tr><td>The country who wins</td></td>",
       "<tr><td>The name of the player of tournament as decided by FIFA</td></tr>",
       "<tr><td>Number of English players in team of the tournament</td></tr>",
-      "<tr><th>Discipline</th></td>",
+      "<tr><th colspan='2'>Discipline</th></td>",
       "<tr><td>The country that receives the first red card of the tournament </td></tr>",
       "<tr><td>The total number of yellow cards during the tournament</td></tr>",
       "<tr><td>The total number of red cards in the tournament</td></tr>",
       "<tr><td>The total number of penalties awarded in the tournament</td></tr>",
-      "<tr><th>Matches</th></td>",
+      "<tr><th colspan='2'>Matches</th></td>",
       "<tr><td>Most goals in one match</td></tr>",
       "<tr><td>Most goals by one team in a match</td></tr>",
       "<tr><td>The total Number of penalty shootouts during the tournament</td></tr>",
     );
     ?>
-    </pre>
+
     <div class="container">
       
       <div class="row row-buffer"> <!-- Heading --> 
@@ -154,12 +155,33 @@
           <div id="disable" class="table-responsive">
             <table class="table table-hover table-condensed shirt">
               <tbody id="result">
-                <?php
-                  foreach($goals as $question){
-                    echo $question;
-                  }
-                ?>
+                <tr><th colspan='2'>Goals</th></tr>
+                <tr><td>The name of the first goalscorer</td><td></td></tr>
+                <tr><td>The name of the top goalscorer</td><td></td></tr>
+                <tr><td>Team that concedes the fewest goals</td><td><?php country_options($countrys, "conced_fewest_goals"); ?></td></tr>
+                <tr><td>Team that concedes the most goals</td><td><?php country_options($countrys, "conced_most_goals"); ?></td></tr>
+                <tr><td>The country who scores the most goals during the tournament (excluding penalty shoot-outs)</td><td><?php country_options($countrys, "score_most_goals"); ?></td></tr>
+                <tr><td>The nationality of the player who scorers goal of the tournament as decided by FIFA</td><td><?php country_options($countrys, "player_most_goals"); ?></td></tr>
+                <tr><td>England’s first goalscorer (you can select ‘none’)</td></tr>
+                <tr><td>Total number of goals during the tournament (excluding penalty shoot-outs)</td></tr>
+                <tr><td>The country that scores the first hat-trick</td><td><?php country_options($countrys, "hat_trick"); ?></td></tr>
+                <tr><td>The total number of own goals scored in the tournament</td></tr>
+                <tr><td>The total number of hat-tricks in the tournament</td></tr>
+                <tr><th colspan='2'>Final Standings</th></tr>
+                <tr><td>The country who wins</td><td><?php country_options($countrys, "winner"); ?></td></tr>
+                <tr><td>The name of the player of tournament as decided by FIFA</td></tr>
+                <tr><td>Number of English players in team of the tournament</td></tr>
+                <tr><th colspan='2'>Discipline</th></tr>
+                <tr><td>The country that receives the first red card of the tournament </td><td><?php country_options($countrys, "red_card"); ?></td></tr>
+                <tr><td>The total number of yellow cards during the tournament</td></tr>
+                <tr><td>The total number of red cards in the tournament</td></tr>
+                <tr><td>The total number of penalties awarded in the tournament</td></tr>
+                <tr><th colspan='2'>Matches</th></tr>
+                <tr><td>Most goals in one match</td></tr>
+                <tr><td>Most goals by one team in a match</td></tr>
+                <tr><td>The total Number of penalty shootouts during the tournament</td></tr>
               </tbody>
+
             </table>								
           </div>
           <button class="btn btn-success btn-sm" type="submit" data-toggle="modal" data-target="#myModal">Send Predictions</button>
