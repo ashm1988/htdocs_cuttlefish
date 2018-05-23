@@ -12,11 +12,12 @@
     <title>SGCF World Cup Predictor 2018</title>
 
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-	<link rel="stylesheet" href="premcss.css">
+	<link rel="stylesheet" href="worldcup.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -65,42 +66,13 @@
     sort($countrys);
 
     function country_options($countrys, $name){
-      echo '<select class="form-control" name="'.$name.'" form="country_select">';
+      echo '<select class="form-control" id="'.$name.'" form="country_select">';
       foreach($countrys as $country){
         echo '<option value="'.$country.'">'.$country.'</option>';
       };
       echo '</select>';
     }
-    // country_options($countrys);
 
-
-    $goals = array(
-      "<tr><th colspan='2'>Goals</th></tr>",
-      '<tr><td>The name of the first goalscorer</td><td></td></tr>',
-      "<tr><td>The name of the top goalscorer</td><td>test</td></tr>",
-      "<tr><td>Team that concedes the fewest goals</td></tr>",
-      "<tr><td>Team that concedes the most goals</td></tr>",
-      "<tr><td>The country who scores the most goals during the tournament (excluding penalty shoot-outs)</td></tr>",
-      "<tr><td>The nationality of the player who scorers goal of the tournament as decided by FIFA</td></tr>",
-      "<tr><td>England’s first goalscorer (you can select ‘none’)</td></tr>",
-      "<tr><td>Total number of goals during the tournament (excluding penalty shoot-outs)</td></tr>",
-      "<tr><td>The country that scores the first hat-trick</td></tr>",
-      "<tr><td>The total number of own goals scored in the tournament</td></tr>",
-      "<tr><td>The total number of hat-tricks in the tournament</td></tr>",
-      "<tr><th colspan='2'>Final Standings</th></td>",
-      "<tr><td>The country who wins</td></td>",
-      "<tr><td>The name of the player of tournament as decided by FIFA</td></tr>",
-      "<tr><td>Number of English players in team of the tournament</td></tr>",
-      "<tr><th colspan='2'>Discipline</th></td>",
-      "<tr><td>The country that receives the first red card of the tournament </td></tr>",
-      "<tr><td>The total number of yellow cards during the tournament</td></tr>",
-      "<tr><td>The total number of red cards in the tournament</td></tr>",
-      "<tr><td>The total number of penalties awarded in the tournament</td></tr>",
-      "<tr><th colspan='2'>Matches</th></td>",
-      "<tr><td>Most goals in one match</td></tr>",
-      "<tr><td>Most goals by one team in a match</td></tr>",
-      "<tr><td>The total Number of penalty shootouts during the tournament</td></tr>",
-    );
     ?>
 
     <div class="container">
@@ -146,40 +118,37 @@
 
       </div>
       
-      <div class="row row-buffer"> <!-- Predictions & Widgets --> 
+      <div class="row row-buffer"> <!-- Predictions --> 
       
-        <!-- <div class="col-xs-2" align="center" > Games Widget 
-        </div> -->
-        
-        <div class="col-xs-offset-2 col-xs-10" id="games" align="center">
+        <div class="" id="games">
           <div id="disable" class="table-responsive">
-            <table class="table table-hover table-condensed shirt">
+            <table class="table table-hover table-condensed">
               <tbody id="result">
                 <tr><th colspan='2'>Goals</th></tr>
-                <tr><td>The name of the first goalscorer</td><td></td></tr>
-                <tr><td>The name of the top goalscorer</td><td></td></tr>
+                <tr><td>The name of the first goalscorer</td><td><input class="form-control input-sm" type="text" id="first_scorer"></td></tr>
+                <tr><td>The name of the top goalscorer</td><td><input class="form-control input-sm" type="text" id="top_scorer"></td></tr>
                 <tr><td>Team that concedes the fewest goals</td><td><?php country_options($countrys, "conced_fewest_goals"); ?></td></tr>
                 <tr><td>Team that concedes the most goals</td><td><?php country_options($countrys, "conced_most_goals"); ?></td></tr>
                 <tr><td>The country who scores the most goals during the tournament (excluding penalty shoot-outs)</td><td><?php country_options($countrys, "score_most_goals"); ?></td></tr>
                 <tr><td>The nationality of the player who scorers goal of the tournament as decided by FIFA</td><td><?php country_options($countrys, "player_most_goals"); ?></td></tr>
-                <tr><td>England’s first goalscorer (you can select ‘none’)</td></tr>
-                <tr><td>Total number of goals during the tournament (excluding penalty shoot-outs)</td></tr>
-                <tr><td>The country that scores the first hat-trick</td><td><?php country_options($countrys, "hat_trick"); ?></td></tr>
-                <tr><td>The total number of own goals scored in the tournament</td></tr>
-                <tr><td>The total number of hat-tricks in the tournament</td></tr>
+                <tr><td>England’s first goalscorer (you can select ‘none’)</td><td><input class="form-control input-sm" type="text" id="eng_scorer"></td></tr>
+                <tr><td>Total number of goals during the tournament (excluding penalty shoot-outs)</td><td><input class="form-control input-sm" type="number" id="total_goals"></td></tr>
+                <tr><td>The country that scores the first hat-trick</td><td><?php country_options($countrys, "country_hat_trick"); ?></td></tr>
+                <tr><td>The total number of own goals scored in the tournament</td><td><input class="form-control input-sm" type="number" id="total_owngoals"></td></tr>
+                <tr><td>The total number of hat-tricks in the tournament</td><td><input class="form-control input-sm" type="number" id="total_hatticks"></td></tr>
                 <tr><th colspan='2'>Final Standings</th></tr>
                 <tr><td>The country who wins</td><td><?php country_options($countrys, "winner"); ?></td></tr>
-                <tr><td>The name of the player of tournament as decided by FIFA</td></tr>
-                <tr><td>Number of English players in team of the tournament</td></tr>
+                <tr><td>The name of the player of tournament as decided by FIFA</td><td><input class="form-control input-sm" type="text" id="tourn_player"></td></tr>
+                <tr><td>Number of English players in team of the tournament</td><td><input class="form-control input-sm" type="number" id="eng_player"></td></tr>
                 <tr><th colspan='2'>Discipline</th></tr>
-                <tr><td>The country that receives the first red card of the tournament </td><td><?php country_options($countrys, "red_card"); ?></td></tr>
-                <tr><td>The total number of yellow cards during the tournament</td></tr>
-                <tr><td>The total number of red cards in the tournament</td></tr>
-                <tr><td>The total number of penalties awarded in the tournament</td></tr>
+                <tr><td>The country that receives the first red card of the tournament </td><td><?php country_options($countrys, "country_red_card"); ?></td></tr>
+                <tr><td>The total number of yellow cards during the tournament</td><td><input class="form-control input-sm" type="number" id="yellow_cards"></td></tr>
+                <tr><td>The total number of red cards in the tournament</td><td><input class="form-control input-sm" type="number" id="red_cards"></td></tr>
+                <tr><td>The total number of penalties awarded in the tournament</td><td><input class="form-control input-sm" type="number" id="total_pens"></td></tr>
                 <tr><th colspan='2'>Matches</th></tr>
-                <tr><td>Most goals in one match</td></tr>
-                <tr><td>Most goals by one team in a match</td></tr>
-                <tr><td>The total Number of penalty shootouts during the tournament</td></tr>
+                <tr><td>Most goals in one match</td><td><input class="form-control input-sm" type="number" id="goals_one_match"></td></tr>
+                <tr><td>Most goals by one team in a match</td><td><input class="form-control input-sm" type="number" id="goals_one_team"></td></tr>
+                <tr><td>The total Number of penalty shootouts during the tournament</td><td><input class="form-control input-sm" type="number" id="pen_shootouts"></td></tr>
               </tbody>
 
             </table>								
@@ -202,6 +171,6 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <script src="prempredapp.js"></script>
+  <script src="worldcup.js"></script>
   </body>
 </html>

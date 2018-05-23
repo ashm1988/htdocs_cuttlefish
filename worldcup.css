@@ -1,0 +1,26 @@
+.table td{
+	text-align:left;
+	border: none !important;
+	vertical-align:bottom;
+}
+
+.table th{
+  border-bottom: 5px solid #ddd !important;
+  text-align: center;
+  vertical-align:middle;
+  column-span: all !important;
+} 
+
+.center {
+	text-align:center;
+
+}
+
+.row-buffer {
+	margin-bottom:30px; 
+}
+
+/* input.form-control {
+  width: 200px;
+  margin:auto; 
+}  */
