@@ -40,15 +40,12 @@
 //Persons name
 $firstname = $_GET['firstname'];
 $lastname = $_GET['lastname'];
-//Joker
-$joker = "Joker played: " . $_GET['joker'];
+
 //Team Variables
-//echo $firstname . $lastname . $ccemail . $joker;
 
-
-$body .= '<table class="table table-hover table-condensed">'
-$body .= '<tbody>'
-$body .= '<tr><th colspan="2">Goals</th></tr>'
+$body = '<table class="table table-hover table-condensed">';
+$body .= '<tbody>';
+$body .= '<tr><th colspan="2">Goals</th></tr>';
 $body .= '<tr><td>The name of the first goalscorer</td><td>'.$_GET["first_scorer"].'</td></tr>';
 $body .= '<tr><td>The name of the top goalscorer</td><td>'.$_GET["top_scorer"].'</td></td></tr>';
 $body .= '<tr><td>Team that concedes the fewest goals</td><td>'.$_GET["conced_fewest_goals"].'</td></tr>';
@@ -73,8 +70,8 @@ $body .= '<tr><th colspan="2">Matches</th></tr>';
 $body .= '<tr><td>Most goals in one match</td><td>'.$_GET["goals_one_match"].'</td></tr>';
 $body .= '<tr><td>Most goals by one team in a match</td><td>'.$_GET["goals_one_team"].'</td></tr>';
 $body .= '<tr><td>The total Number of penalty shootouts during the tournament</td><td>'.$_GET["pen_shootouts"].'</td></tr>';
-$body .= '</tbody>'
-$body .= '</table>'
+$body .= '</tbody>';
+$body .= '</table>';
 
 
 echo $body;

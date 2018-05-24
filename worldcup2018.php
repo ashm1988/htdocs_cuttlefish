@@ -84,6 +84,7 @@
       </div>
       
       <div class="row row-buffer"> <!-- Name & Mail --> 
+
         <div class="col-sm-4 col-sm-offset-4 col-xs-12">
           <form id="details">
             <div class="form-group">
@@ -94,6 +95,7 @@
                 </div>
                 <input type="text" class="form-control" id="firstname" name="firstname" required placeholder="First Name">
               </div>
+              <span class="error">First name is required</span>
             </div>
             <div class="form-group">
               <label class="sr-only" for="name">Last Name</label>
@@ -112,6 +114,9 @@
                 </div>
                 <input type="email" class="form-control" id="email" placeholder="CC E-mail">
               </div>
+            </div>
+            <div id='submit'>
+              <button class="btn btn-success btn-sm center" type="submit"  data-toggle="modal" data-target="#myModal">Send Predictions</button>
             </div>
           </form>
         </div>	
@@ -153,7 +158,9 @@
 
             </table>								
           </div>
-          <button class="btn btn-success btn-sm" type="submit" data-toggle="modal" data-target="#myModal">Send Predictions</button>
+          <div id='submit'>
+            <button class="btn btn-success btn-sm center" type="submit"  data-toggle="modal" data-target="#myModal">Send Predictions</button>
+          </div>
         </div>
         
         <!-- <div class="col-xs-2" align="center" > 
@@ -169,8 +176,9 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <script src="worldcup.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="worldcup.js"></script>
+
   </body>
 </html>
