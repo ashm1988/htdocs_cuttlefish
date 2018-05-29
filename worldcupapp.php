@@ -1,41 +1,4 @@
 <?php
-// include('connection.php');
-// ehostdb();
-
-// $query = "select * from teams";
-// $result = mysqli_query($cxn,$query)
-// 	or 
-// die("No table");
-// $teamsH = array();
-// $teamsA = array();
-// while($row = mysqli_fetch_assoc($result))
-// {
-// 	extract($row);
-// 	$teamsH[$croppedName] = '
-// 	<tr>
-// 	<td>'.$displayName.'</td>
-// 	<td>'.$_GET[$croppedName].'</td>
-// 	<td>Vs</td>';
-	
-// 	$teamsA[$croppedName] = '
-// 	<td>'.$_GET[$croppedName].'</td>
-// 	<td>'.$displayName.'</td>	
-// 	</tr>';
-	
-// 	$teamsH2[$croppedName] = '<tr><td>'.$displayName.'</td><td>'.$_GET[$croppedName].'</td><td>Vs</td>';
-	
-// 	$teamsA2[$croppedName] = '
-// 	<td>'.$_GET[$croppedName].'</td>
-// 	<td>'.$displayName.'</td>	
-// 	</tr>';	
-
-// }
-
-// function playing($day){
-// 	$datetime = new DateTime($day);
-// 	$datetime->format('l jS F');
-// 	return '<tr><th colspan="7" align="left">'. $datetime->format('l jS F') .'</th></tr>';
-// }
 
 //Persons name
 $firstname = $_GET['firstname'];
@@ -79,7 +42,7 @@ echo $body;
 //CC to
 $ccemail = $_GET['ccemail'];
 //Subject
-$emailSubject = $firstname .' '. $lastname .' '. ' Final Week Predictions 2018';
+$emailSubject = $firstname .' '. $lastname .' '. ' World Cup Predictions 2018';
 //send to
 $webMaster = "stevecharityfund@hotmail.co.uk";
 // headers

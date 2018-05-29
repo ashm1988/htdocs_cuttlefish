@@ -24,20 +24,20 @@ $(document).ready(function(){
 	});
 	// After Form Submitted Validation
 	$('#submit button').click(function(event){
-		var form_data = $('#details').serialzeArray();
-		var error_free = true;
-		for (var input in form_data){
-			var element = $('#details_'+form_data[input]['name']);
-			var valid = element.hasClass("valid");
-			var error_element = $('span', element.parent());
-			if (!valid){error_element.removeClass("error").addClass("error_show"); error_free = false;}
-			else {error_element.removeClass("error_show").addClass("error");}
-		}
-		if (!error_free){
-			// event.preventDefault();
-		}
-		else{
-			alert('No errors');
+		// var form_data = $('#details').serialzeArray();
+		// var error_free = true;
+		// for (var input in form_data){
+		// 	var element = $('#details_'+form_data[input]['name']);
+		// 	var valid = element.hasClass("valid");
+		// 	var error_element = $('span', element.parent());
+		// 	if (!valid){error_element.removeClass("error").addClass("error_show"); error_free = false;}
+		// 	else {error_element.removeClass("error_show").addClass("error");}
+		// }
+		// if (!error_free){
+		// 	// event.preventDefault();
+		// }
+		// else{
+		// 	alert('No errors');
 
 
 			event.preventDefault();
@@ -126,6 +126,6 @@ $(document).ready(function(){
 					$('#games button').hide();
 				}
 			})
-		}
+		// }
 	});
 });

@@ -28,6 +28,8 @@
   <body>
 
     <?php
+   	include('Predictor/nav.html');
+
     $countrys = array(
       " ",
       "Russia",
@@ -95,7 +97,6 @@
                 </div>
                 <input type="text" class="form-control" id="firstname" name="firstname" required placeholder="First Name">
               </div>
-              <span class="error">First name is required</span>
             </div>
             <div class="form-group">
               <label class="sr-only" for="name">Last Name</label>
@@ -114,9 +115,6 @@
                 </div>
                 <input type="email" class="form-control" id="email" placeholder="CC E-mail">
               </div>
-            </div>
-            <div id='submit'>
-              <button class="btn btn-success btn-sm center" type="submit"  data-toggle="modal" data-target="#myModal">Send Predictions</button>
             </div>
           </form>
         </div>	

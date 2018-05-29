@@ -1,7 +1,13 @@
+.table {
+	width: auto;
+}
+
 .table td{
 	text-align:left;
 	border: none !important;
 	vertical-align:bottom;
+	white-space: normal !important;
+	column-width: 200em;
 }
 
 .table th{
